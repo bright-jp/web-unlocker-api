@@ -1,6 +1,6 @@
 # Web Unlocker API
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
+[![Promo](https://github.com/bright-jp/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
 
 [Web Unlocker](https://brightdata.jp/products/web-unlocker) は強力なスクレイピング API であり、高度なボット保護を回避しながらあらゆるWebサイトへアクセスできます。複雑なアンチボット基盤を管理することなく、1回のAPI呼び出しでクリーンなHTML/JSONレスポンスを取得できます。
 
@@ -215,14 +215,14 @@ headers["x-unblock-expect"] = '{"element": ".star-wrapper__desc"}'
 headers["x-unblock-expect"] = '{"text": "reviews"}'
 ```
 
-👉 完全なコードは [g2_wait.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_wait.py) で確認できます
+👉 完全なコードは [g2_wait.py](https://github.com/bright-jp/web-unlocker/blob/main/src/g2_wait.py) で確認できます
 
 #### Mobile User-Agent Targeting
 デスクトップではなくモバイルのuser agentを使用するには、username に `-ua-mobile` を付与します:
 ```python
 username = f"brd-customer-{customer_id}-zone-{zone_name}-ua-mobile"
 ```
-👉 完全なコードは [g2_mobile.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_mobile.py) で確認できます
+👉 完全なコードは [g2_mobile.py](https://github.com/bright-jp/web-unlocker/blob/main/src/g2_mobile.py) で確認できます
 
 #### Geolocation Targeting
 Web Unlocker は最適なIPロケーションを自動選択しますが、ターゲットロケーションを指定することもできます:
@@ -238,7 +238,7 @@ username = f"brd-customer-{customer_id}-zone-{zone_name}-country-us-city-sanfran
 ```python
 username = f"brd-customer-{customer_id}-zone-{zone_name}-debug-full"
 ```
-👉 完全なコードは [g2_debug.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_debug.py) で確認できます
+👉 完全なコードは [g2_debug.py](https://github.com/bright-jp/web-unlocker/blob/main/src/g2_debug.py) で確認できます
 
 #### Success Rate Statistics
 特定ドメインのAPI成功率を監視します:
