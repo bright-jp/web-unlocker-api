@@ -1,8 +1,8 @@
 # Web Unlocker API
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/) 
+[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
 
-[Web Unlocker](https://brightdata.com/products/web-unlocker) is a powerful scraping API that allows access to any website while bypassing sophisticated bot protections. You can retrieve clean HTML/JSON responses with a single API call without managing complex anti-bot infrastructure.
+[Web Unlocker](https://brightdata.jp/products/web-unlocker) は強力なスクレイピング API であり、高度なボット保護を回避しながらあらゆるWebサイトへアクセスできます。複雑なアンチボット基盤を管理することなく、1回のAPI呼び出しでクリーンなHTML/JSONレスポンスを取得できます。
 
 # Table of Contents
 - [Features](#features)
@@ -22,19 +22,19 @@
 - [Final Notes](#final-notes)
 
 ## Features
-Web Unlocker provides comprehensive web scraping capabilities:
-- Automatic proxy management and CAPTCHA solving
-- Real-user behavior simulation
-- Built-in JavaScript rendering
-- Global geo-targeting
-- Automated retry mechanisms
-- Pay-per-success pricing model
+Web Unlocker は包括的なWebスクレイピング機能を提供します:
+- 自動プロキシ管理とCAPTCHA解決
+- 実ユーザー行動のシミュレーション
+- 組み込みのJavaScriptレンダリング
+- グローバルなジオロケーションターゲティング
+- 自動リトライメカニズム
+- 成功課金（pay-per-success）の価格モデル
 
 ## Getting Started
-Before using Web Unlocker, complete the setup by following the [quickstart guide](https://docs.brightdata.com/scraping-automation/web-unlocker/quickstart).
+Web Unlocker を使用する前に、[quickstart guide](https://docs.brightdata.com/scraping-automation/web-unlocker/quickstart) に従ってセットアップを完了してください。
 
 ### Direct API Access
-The recommended method for integrating Web Unlocker.
+Web Unlocker を統合するための推奨方法です。
 
 
 **Example: cURL Command**
@@ -50,11 +50,11 @@ curl -X POST "https://api.brightdata.com/request" \
 ```
 
 1. API Endpoint: `https://api.brightdata.com/request`
-2. Authorization Header: Your [API token](https://docs.brightdata.com/scraping-automation/web-unlocker/send-your-first-request#generating-your-bright-data-api-token) from the Web Unlocker API zone
+2. Authorization Header: Web Unlocker API zone の [API token](https://docs.brightdata.com/scraping-automation/web-unlocker/send-your-first-request#generating-your-bright-data-api-token)
 3. Payload:
-   - `zone`: Your Web Unlocker API zone name
-   - `url`: Target URL to access
-   - `format`: Response format (use `raw` for direct site response)
+   - `zone`: Web Unlocker API zone 名
+   - `url`: アクセス対象のターゲットURL
+   - `format`: レスポンス形式（サイトのレスポンスを直接返すには `raw` を使用します）
 
 **Example: Python Script**
 ```python
@@ -86,7 +86,7 @@ else:
 
 ### Native Proxy-based Access
 
-Alternative method using proxy-based routing.
+プロキシベースのルーティングを使用する代替方法です。
 
 **Example: cURL Command**
 ```bash
@@ -95,10 +95,10 @@ curl "http://lumtest.com/myip.json" \
 --proxy-user "brd-customer-<CUSTOMER_ID>-zone-<ZONE_NAME>:<ZONE_PASSWORD>"
 ```
 
-Required credentials:
-1. Customer ID: Found in [Account settings](https://brightdata.com/cp/setting/customer_details)
-2. Web Unlocker API zone name: Found in the overview tab
-3. Web Unlocker API password: Found in the overview tab
+必要な認証情報:
+1. Customer ID: [Account settings](https://brightdata.jp/cp/setting/customer_details) にあります
+2. Web Unlocker API zone 名: overview タブにあります
+3. Web Unlocker API password: overview タブにあります
 
 **Example: Python Script**
 ```python
@@ -123,10 +123,10 @@ else:
 ```
 
 ## Practical Example: Scraping G2 Reviews
-Let's see how to scrape reviews from [G2.com](https://www.g2.com/), a site heavily protected by Cloudflare.
+Cloudflare によって強固に保護されているサイトである [G2.com](https://www.g2.com/) から、レビューをスクレイピングする方法を見ていきます。
 
 ### Basic Request (Without Web Unlocker)
-Using a simple Python script to scrape [G2 reviews](https://www.g2.com/products/mongodb/reviews):
+シンプルなPythonスクリプトを使用して [G2 reviews](https://www.g2.com/products/mongodb/reviews) をスクレイピングします:
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -148,11 +148,11 @@ else:
     print("Request blocked")
 ```
 
-**Result:** The script fails (`403` error) due to Cloudflare’s anti-bot measures.
+**Result:** Cloudflare のアンチボット対策によりスクリプトは失敗（`403` エラー）します。
 
 
 ### Enhanced Request (With Web Unlocker)
-To bypass such restrictions, use Web Unlocker. Below is a Python implementation:
+このような制限を回避するには、Web Unlocker を使用します。以下はPythonによる実装です:
 
 #### Direct API Access
 ```python
@@ -179,10 +179,10 @@ if response.status_code == 200:
 else:
     print(f"Error {response.status_code}: {response.text}")
 ```
-**Result:** Successfully bypasses protection, retrieves content with status `200`.
+**Result:** 保護を正常に回避し、ステータス `200` でコンテンツを取得します。
 
 #### Proxy-Based Access
-Alternatively, use the proxy-based method:
+代替として、プロキシベースの方法を使用します:
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -201,47 +201,47 @@ else:
     print(f"Error {response.status_code}: {response.text}")
 ```
 
-**Note:** Suppress SSL certificate warnings by adding:
+**Note:** 以下を追加してSSL証明書の警告を抑制します:
 ```python
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 ```
 
 #### Waiting for Specific Elements
-Use the `x-unblock-expect` header to wait for specific elements or text:
+`x-unblock-expect` ヘッダーを使用して、特定の要素またはテキストを待機します:
 ```python
 headers["x-unblock-expect"] = '{"element": ".star-wrapper__desc"}'
 # or
 headers["x-unblock-expect"] = '{"text": "reviews"}'
 ```
 
-👉 You can find the complete code in [g2_wait.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_wait.py)
+👉 完全なコードは [g2_wait.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_wait.py) で確認できます
 
 #### Mobile User-Agent Targeting
-To use mobile user agents instead of desktop ones, append `-ua-mobile` to your username:
+デスクトップではなくモバイルのuser agentを使用するには、username に `-ua-mobile` を付与します:
 ```python
 username = f"brd-customer-{customer_id}-zone-{zone_name}-ua-mobile"
 ```
-👉 You can find the complete code in [g2_mobile.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_mobile.py)
+👉 完全なコードは [g2_mobile.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_mobile.py) で確認できます
 
 #### Geolocation Targeting
-While Web Unlocker automatically selects optimal IP locations, you can specify target locations:
+Web Unlocker は最適なIPロケーションを自動選択しますが、ターゲットロケーションを指定することもできます:
 ```python
 username = f"brd-customer-{customer_id}-zone-{zone_name}-country-us"
 username = f"brd-customer-{customer_id}-zone-{zone_name}-country-us-city-sanfrancisco"
 ```
 
-👉 You can learn more [here](https://docs.brightdata.com/api-reference/proxy/geolocation-targeting).
+👉 詳細は [here](https://docs.brightdata.com/api-reference/proxy/geolocation-targeting) で確認できます。
 
 #### Debugging Requests
-Enable detailed debugging information by adding the `-debug-full` flag:
+`-debug-full` フラグを追加して詳細なデバッグ情報を有効化します:
 ```python
 username = f"brd-customer-{customer_id}-zone-{zone_name}-debug-full"
 ```
-👉 You can find the complete code in [g2_debug.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_debug.py)
+👉 完全なコードは [g2_debug.py](https://github.com/luminati-io/web-unlocker/blob/main/src/g2_debug.py) で確認できます
 
 #### Success Rate Statistics
-Monitor API success rates for specific domains:
+特定ドメインのAPI成功率を監視します:
 ```python
 import requests
 
@@ -261,23 +261,23 @@ get_success_rate("g2.*") # Get statistics for all top-level domains
 ```
 
 ## Final Notes
-Web Unlocker lets you scrape even the most protected websites effortlessly. Key points to remember:
+Web Unlocker を使用すると、最も強固に保護されたWebサイトであっても簡単にスクレイピングできます。以下の重要ポイントを覚えておいてください:
 
 1. **Not Compatible With**:  
-   - Browsers (Chrome, Firefox, Edge)  
-   - Anti-detect browsers (Adspower, Multilogin)  
-   - Automation tools (Puppeteer, Playwright, Selenium)  
+   - ブラウザ（Chrome, Firefox, Edge）  
+   - アンチ検知ブラウザ（Adspower, Multilogin）  
+   - 自動化ツール（Puppeteer, Playwright, Selenium）  
 
 2. **Use Scraping Browser**:  
-   For browser-based automation, use Bright Data’s [Scraping Browser](https://brightdata.com/products/scraping-browser).
+   ブラウザベースの自動化には、Bright Data の [Scraping Browser](https://brightdata.jp/products/scraping-browser) を使用してください。
 
 3. **Premium Domains**:  
-   Access challenging sites with [premium domain](https://docs.brightdata.com/scraping-automation/web-unlocker/features#web-unlocker-api-premium-domains) features.
+   [premium domain](https://docs.brightdata.com/scraping-automation/web-unlocker/features#web-unlocker-api-premium-domains) 機能で難易度の高いサイトへアクセスできます。
 
 4. **CAPTCHA Solving**:  
-   Solved automatically, but can be [disabled](https://docs.brightdata.com/scraping-automation/web-unlocker/features#disable-captcha-solving). Learn more about Bright Data's [CAPTCHA Solver](https://brightdata.com/products/web-unlocker/captcha-solver).
+   自動的に解決されますが、[disabled](https://docs.brightdata.com/scraping-automation/web-unlocker/features#disable-captcha-solving) にできます。Bright Data の [CAPTCHA Solver](https://brightdata.jp/products/web-unlocker/captcha-solver) についても詳しく確認してください。
    
 5. **Custom Headers & Cookies**:  
-   Send your own to target specific site versions. [Learn more](https://docs.brightdata.com/scraping-automation/web-unlocker/features#manual-headers-and-cookies).
+   狙ったサイトバージョンを対象にするために、独自のヘッダーとCookieを送信できます。 [Learn more](https://docs.brightdata.com/scraping-automation/web-unlocker/features#manual-headers-and-cookies)。
 
-Visit the [official documentation](https://docs.brightdata.com/scraping-automation/web-unlocker/introduction) for more details.
+詳細は [official documentation](https://docs.brightdata.com/scraping-automation/web-unlocker/introduction) を参照してください。
